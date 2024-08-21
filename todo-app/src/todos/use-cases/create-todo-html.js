@@ -1,7 +1,4 @@
 import { Todo } from "../models/todo.models";
-
-
-
 /**
  * 
  * @param {Todo} todo 
