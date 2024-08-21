@@ -31,6 +31,7 @@ export const App = (elementId) => {
     })();
 
     const newDescriptionInput = document.querySelector(elemntIDs.NewTodoInput);
+    const TodoListUL = document.querySelector(elemntIDs.TodoList);
 
     newDescriptionInput.addEventListener('keyup', (event) => {
         if( event.keyCode != 13 ) return;
@@ -39,6 +40,12 @@ export const App = (elementId) => {
         todoStore.addTodo( event.target.value );
         displayTodos();
         event.target.value = '';
+    });
+
+    TodoListUL.addEventListener('click', ( event ) => {
+        const elementToggle = event.target.closest('[data-id]');
+        todoStore.toggleTodo( elementToggle.getAttribute('data-id') );
+        displayTodos();
     });
 
 }
