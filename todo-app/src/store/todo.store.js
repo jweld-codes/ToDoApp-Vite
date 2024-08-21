@@ -1,6 +1,6 @@
 import { Todo } from "../todos/models/todo.models";
 
-const Filters = {
+export const Filters = {
     All: 'All',
     Completed: 'Completed',
     Pending: 'Pending'
@@ -84,7 +84,7 @@ const deleteAllTodo = () => {
  * @param {Filters} newFilter 
  */
 const setFilter = (newFilter = Filters.All) => {
-    state.filter = newfilter;
+    state.filter = newFilter;
     saveStateToLocalStorage();
 }
 
