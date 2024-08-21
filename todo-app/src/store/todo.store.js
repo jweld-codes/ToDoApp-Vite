@@ -11,6 +11,9 @@ const state = {
         new Todo('Piedra del Alma'),
         new Todo('Pieda del Infinito'),
         new Todo('Pieda del Tiempo'),
+        new Todo('Pieda del Poder'),
+        new Todo('Pieda de la Realidad'),
+        new Todo('Pieda de la Mente'),
     ],
 
     filter: Filters.All,
@@ -25,7 +28,7 @@ const loadStore = () => {
     throw new Error('No implementado');
 }
 
-const getTodo = (filer = Filters.All) => {
+const getTodo = (filter = Filters.All) => {
     switch(filter){
         case Filters.All:
             return [...state.todos];
@@ -88,4 +91,3 @@ export default {
     setFilter,
     getCurrentFilter,
 }
-
