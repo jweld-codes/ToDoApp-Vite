@@ -11,9 +11,6 @@ const state = {
         new Todo('Piedra del Alma'),
         new Todo('Pieda del Infinito'),
         new Todo('Pieda del Tiempo'),
-        new Todo('Pieda del Poder'),
-        new Todo('Pieda de la Realidad'),
-        new Todo('Pieda de la Mente'),
     ],
 
     filter: Filters.All,
@@ -78,7 +75,7 @@ const deleteTodo = (todoId) => {
 }
 
 const deleteAllTodo = () => {
-    state.todos = state.todos.filter(todo => todo.done);
+    state.todos = state.todos.filter(todo => !todo.done);
     saveStateToLocalStorage();
 }
 
